@@ -6,37 +6,45 @@ import { puts, prompt } from './export_config.js';
 class Menu {
     constructor(api = true) {
         if (!(api)) {
-            this.iniciar()
+            this.principalMenu()
         }else{
             puts(api)
         }
     }
 
-    iniciar(){
-        puts("Ola! como posso ajudar?\n 0-exit\n 1-lodash")
-        const x = prompt('$ - ')
-        this.options_menu(Number(x))
-    }
-
-    options_menu(x){
-        const class_select = options_class(x)
-
-        
-
-            function options_class(x){
-                switch (x){
+    principalMenu(){
+        while (true) {
+            puts("Ola! como posso ajudar?\n 0-exit\n 1-lodash")
+            const chose = prompt('$ - ')
             
-                    case 0:
-                        return 0
-                    case 1:
-                        return objlodash
-                    default:
-                        puts("não valido")
-                        //this.iniciar()
-                
+            if (chose === '0'){
+                puts('saindo do programa')
+                break
+            }
+
+            const objClass = this.choseClass(Number(chose))
+            
+            if (objClass) {
+                puts(objClass. )
             }
         }
+
+        function options(slc){
+            // em breve
+        }
         
+    }
+
+    choseClass(x){
+        const arr_classes_existents = {
+            0: null,
+            1: objlodash
+        }
+
+        const obj = arr_classes_existents[x]
+
+        return (obj && obj.constructor?.name !== 'Object') ? obj : null;
+
     }
 
 

@@ -6,6 +6,7 @@ import { puts, prompt } from './export_config.js';
 class Menu {
     constructor(api = true) {
         if (!(api)) {
+            this.options = []
             this.principalMenu()
         }else{
             puts(api)
@@ -25,12 +26,10 @@ class Menu {
             const objClass = this.choseClass(Number(chose))
             
             if (objClass) {
-                puts(objClass. )
+                this.options = objClass.options_class()
+                puts(this.options)
             }
-        }
 
-        function options(slc){
-            // em breve
         }
         
     }
